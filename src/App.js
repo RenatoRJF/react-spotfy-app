@@ -1,27 +1,35 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import GlobalStyle from './styles/global'
+import Routes from './routes';
 
-import Sidebar from './components/Sidebar';
-import Player from './components/Player';
-import Header from './components/Header';
+// General styles
+import GlobalStyle from "./styles/global";
 
-import { Wrapper, Container, Content } from './styles/components';
+//Styled Compoents
+import Sidebar from "./components/Sidebar";
+import Player from "./components/Player";
+import Header from "./components/Header";
+
+// General styled components
+import { Wrapper, Container, Content } from "./styles/components";
 
 const App = () => (
-  <Wrapper>
-    <Container>
-      <Sidebar />
+  <BrowserRouter>
+    <Wrapper>
+      <Container>
+        <Sidebar />
+        <Content>
+          <Header />
+          <Routes />
+        </Content>
+      </Container>
 
-      <Content>
-        <Header />
-      </Content>
-    </Container>
+      <Player />
 
-    <Player />
-
-    <GlobalStyle />
-  </ Wrapper>
-)
+      <GlobalStyle />
+    </Wrapper>
+  </BrowserRouter>
+);
 
 export default App;
