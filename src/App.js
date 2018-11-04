@@ -1,6 +1,10 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 
+// Reactotron
+import './config/reactotron';
+
+// Routes
 import Routes from './routes';
 
 // General styles
